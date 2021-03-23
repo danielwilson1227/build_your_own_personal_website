@@ -9,6 +9,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&display=swap" rel="stylesheet">
+<link rel="shortcut icon" href="#" />
   <style>
 * {
 	box-sizing: border-box;
@@ -69,7 +70,7 @@ display: block;
 details em{
   margin: 1em auto;
   display: block;
-  font-size: 1.5rem;
+  font-size: 2rem;
   text-decoration: underline;
   }
  details summary{
@@ -130,7 +131,7 @@ details img:nth-of-type(3){
 .quiz-option{
   margin: 0.5em 0 0.5em 0.5em;
 }
-@media(max-width: 754px){
+@media(max-width: 754px) and (min-width: 400px){
 #full-container h1:first-of-type{
   font-size: 2rem;
 }
@@ -145,6 +146,9 @@ details summary{
    font-size: 1.2rem;
    padding: 0.5em;
  } 
+ details em{
+  font-size: 1.5rem;
+  }
  #question{
   font-size: 1.2rem;
   margin: 0.5em;
@@ -152,6 +156,23 @@ details summary{
 #quiz-container{
   width: 80%;
 }
+}
+@media(max-width: 399px){
+  details summary{
+   font-size: 0.9rem;
+   padding: 0.7em;
+ } 
+ #question{
+  margin: 0.5em 0;
+  font-size: 1rem;
+  padding: 0.5em;
+}
+#full-container h1:first-of-type{
+  font-size: 2rem;
+}
+details em{
+  font-size: 1.2rem;
+  }
 }
 </style>
 </head>
