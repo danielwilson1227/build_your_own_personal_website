@@ -9,6 +9,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&display=swap" rel="stylesheet">
+<link rel="shortcut icon" href="#" />
   <style>
 * {
 	box-sizing: border-box;
@@ -39,6 +40,7 @@ body {
 }
 #danny-pic{
   height: 55%;
+  max-height: 400px;
   width: 25%;
   margin: 0 auto;
   display: block;
@@ -49,9 +51,11 @@ body {
 #about-me{
 height: 50%;
 width: 30%;
-background-color: red;
+margin: 0 auto;
+color: white;
+background-color: #6f2c4d;
 padding: 1em;
-display: inline-block;
+display: block;
 }
 
 #about-me details{
@@ -68,7 +72,7 @@ display: block;
 details em{
   margin: 1em auto;
   display: block;
-  font-size: 1.5rem;
+  font-size: 2rem;
   text-decoration: underline;
   }
  details summary{
@@ -79,8 +83,15 @@ details em{
 details img:nth-of-type(3){
   margin-bottom: 2em;
 }
+
 .title h2{
   margin-top: 1em;
+  background-color: #1c6c84;
+}
+#title-container{
+  background-color: #1c6c84;
+  margin: 1em auto;
+  width: 50%;
 }
 #full-container h2:first-of-type{
   margin-top: 0.3em;
@@ -91,13 +102,20 @@ details img:nth-of-type(3){
   font-size: 3rem;
   font-family: 'Montserrat Alternates', sans-serif;
 }
+#description{
+  margin: 1em auto;
+  width: 50%;
+  color: white;
+  background-color: #1c6c84;
+  padding: 0.5em;
+}
 
 #startBTN{
   padding: 1em;
-  text-align: center;
-  margin-top: 1em;
+  display: block;
+  margin: 0.5em auto;
   cursor: pointer;
-  background-color: blue;
+  background-color: #1c6c84;
   color: white;
 }
 #quiz-container{
@@ -105,13 +123,13 @@ details img:nth-of-type(3){
   height: 50%;
   width: 70%;
   margin: 0 auto;
-  background: rgba(255,0,0,0.8)
+  background: rgba(111,44,77,0.8)
 }
 #quiz-container button{
   display: block;
   padding: 0.5em;
   color: white;
-  background-color: purple;
+  background-color: #1c6c84;
   cursor: pointer;
 }
 
@@ -120,25 +138,41 @@ details img:nth-of-type(3){
   border: solid black;
   margin: 1em 0;
   font-size: 1.5rem;
+  color: white;
 }
 #question{
   margin: 0 0 0.5em 0.5em;
   font-size: 1.5rem;
-  color: #003366;
+  color: white;
 }
 .quiz-option{
   margin: 0.5em 0 0.5em 0.5em;
 }
-@media(max-width: 754px){
+@media(max-width: 754px) and (min-width: 400px){
 #full-container h1:first-of-type{
   font-size: 2rem;
 }
 #full-container h2:first-of-type{
   font-size: 1.5rem;
 }
+#danny-pic{
+  height: 75%;
+  width: 45%;
+}
+#title-container{
+  width: 75%;
+}
+#description{
+ font-size: 1rem;
+ width: 75%;
+}
 details summary{
-   font-size: 1.2rem;
+   font-size: 1rem;
+   padding: 0.5em;
  } 
+ details em{
+  font-size: 1.5rem;
+  }
  #question{
   font-size: 1.2rem;
   margin: 0.5em;
@@ -147,13 +181,43 @@ details summary{
   width: 80%;
 }
 }
+@media(max-width: 399px){
+  details summary{
+   font-size: 0.9rem;
+   padding: 0.7em;
+ } 
+ #question{
+  margin: 0.5em 0;
+  font-size: 1rem;
+  padding: 0.5em;
+}
+#title-container{
+  width: 85%;
+}
+#full-container h1:first-of-type{
+  font-size: 1.2rem;
+}
+#full-container h2:first-of-type{
+  font-size: 1.2rem;
+}
+#description{
+ font-size: 0.8rem;
+ width: 85%;
+}
+details em{
+  font-size: 1.2rem;
+  }
+}
 </style>
 </head>
 <body>
   <div id="full-container">
+    <section id="title-container">
  <h1 class="title text-center">DANIEL WILSON</h1>
  <h2 class="title text-center">Web Developer</h2>
- <img id="danny-pic" src="https://www.linkpicture.com/q/danny.jpg" alt="picture">
+</section>
+ <img id="danny-pic" src="images/danny.jpg" alt="picture">
+ <h3 id="description" class="text-center">Want to know more about me? Check out my hobbies and test your knowledge about me in the quiz below!</h3>
  <div id="about-me">
   <details>
     <summary>View Daniel's Hobbies</summary>
@@ -185,19 +249,23 @@ details summary{
   let userChoice;
   let userchoiceBTN;
    $('#about-me').click(function(){
-     $('#startBTN').toggle();
-     if($(this).css('display') == 'inline-block'){
-      $(this).css('display', 'block');
+     $('#startBTN').hide()
+     if(this.className!== 'open'){
+       $(this).toggleClass('open');
       $(this).css('width', '100%');
+      $('#description').hide();
      }
      else{
-      $(this).css('display', 'inline-block');
+      $(this).toggleClass('open');
      $(this).css('width', '30%');
+     $('#startBTN').show();
+     $('#description').show();
      }
    });
  
    $('#startBTN').click(function(){
      $('#about-me').toggle();
+     $('#description').hide();
      $('#startBTN').css('display', 'none');
      $('#quiz-container').css('display', 'block');
      setupQuestions();
@@ -267,7 +335,8 @@ function finishGame(){
   count=0;
   $('#quiz-container').css('display', 'none');
   $('#about-me').toggle();
-     $('#startBTN').css('display', 'inline-block');
+     $('#startBTN').css('display', 'block');
+     $('#description').show();
 }
     </script>
     </div>
