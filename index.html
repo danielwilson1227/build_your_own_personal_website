@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Daniel Wilson">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Daniel Wilson Personal Website</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&display=swap" rel="stylesheet">
+  <style>
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body::after {
+	content: "";
+	background: url("https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1066&q=80") no-repeat center/cover;
+	opacity: 0.50;
+	top: -10px;
+	left: -10px;
+	bottom: 0;
+	right: 0;
+	position: fixed;
+	z-index: -1;
+}
+body {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	margin: 0 auto;
+	padding: 1em;
+}
+.text-center{
+  text-align: center;
+}
+#danny-pic{
+  height: 55%;
+  width: 25%;
+  margin: 0 auto;
+  display: block;
+  border-radius: 50%;
+  margin-bottom: 1em;
+}
+
+#about-me{
+height: 50%;
+width: 30%;
+background-color: red;
+padding: 1em;
+display: inline-block;
+}
+
+#about-me details{
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+}
+details img{
+height: 25%;
+width: 25%;
+margin: 0 auto;
+display: block;
+}
+details em{
+  margin: 1em auto;
+  display: block;
+  font-size: 1.5rem;
+  text-decoration: underline;
+  }
+ details summary{
+   font-size: 1.5rem;
+   border: solid rgba(0,0,0,0.5);
+ } 
+ 
+details img:nth-of-type(3){
+  margin-bottom: 2em;
+}
+.title h2{
+  margin-top: 1em;
+}
+#full-container h2:first-of-type{
+  margin-top: 0.3em;
+  font-size: 2rem;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+#full-container h1:first-of-type{
+  font-size: 3rem;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+
+#startBTN{
+  padding: 1em;
+  text-align: center;
+  margin-top: 1em;
+  cursor: pointer;
+  background-color: blue;
+  color: white;
+}
+#quiz-container{
+  display: none;
+  height: 50%;
+  width: 70%;
+  margin: 0 auto;
+  background: rgba(255,0,0,0.8)
+}
+#quiz-container button{
+  display: block;
+  padding: 0.5em;
+  color: white;
+  background-color: purple;
+  cursor: pointer;
+}
+
+#question-number{
+  text-align: center;
+  border: solid black;
+  margin: 1em 0;
+  font-size: 1.5rem;
+}
+#question{
+  margin: 0 0 0.5em 0.5em;
+  font-size: 1.5rem;
+  color: #003366;
+}
+.quiz-option{
+  margin: 0.5em 0 0.5em 0.5em;
+}
+@media(max-width: 754px){
+#full-container h1:first-of-type{
+  font-size: 2rem;
+}
+#full-container h2:first-of-type{
+  font-size: 1.5rem;
+}
+details summary{
+   font-size: 1.2rem;
+ } 
+ #question{
+  font-size: 1.2rem;
+  margin: 0.5em;
+}
+#quiz-container{
+  width: 80%;
+}
+}
+</style>
+</head>
+<body>
+  <div id="full-container">
+ <h1 class="title text-center">DANIEL WILSON</h1>
+ <h2 class="title text-center">Web Developer</h2>
+ <img id="danny-pic" src="https://www.linkpicture.com/q/danny.jpg" alt="picture">
+ <div id="about-me">
+  <details>
+    <summary>View Daniel's Hobbies</summary>
+    <em class="text-center">Programming</em>
+    <img src="https://images.unsplash.com/photo-1589652717521-10c0d092dea9?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="picture">
+    <br>
+    <em class="text-center">Playing Drums</em>
+    <img src="https://images.unsplash.com/photo-1543443374-b6fe10a6ab7b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80" alt="picture">
+    <br>
+    <em class="text-center">Running</em>
+    <img src="https://images.unsplash.com/photo-1613206334619-c6bb9c203ef0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1053&q=80" alt="picture">
+    <br>
+</details>
+</div>
+<br>
+<button id="startBTN">Start Trivia</button>
+<section id="quiz-container">
+<p id="question-number">test</p>
+<h3 id="question" class="text-center">test</h3>
+<button class="quiz-option" id="option-one"></button>
+<button class="quiz-option" id="option-two"></button>
+<button class="quiz-option" id="option-three"></button>
+<button class="quiz-option" id="option-four"></button>
+<br>
+</section>
+ <script>
+    let triviaContent=document.getElementById('quiz-container');
+  triviaContent.addEventListener('click', getText);
+  let userChoice;
+  let userchoiceBTN;
+   $('#about-me').click(function(){
+     $('#startBTN').toggle();
+     if($(this).css('display') == 'inline-block'){
+      $(this).css('display', 'block');
+      $(this).css('width', '100%');
+     }
+     else{
+      $(this).css('display', 'inline-block');
+     $(this).css('width', '30%');
+     }
+   });
+ 
+   $('#startBTN').click(function(){
+     $('#about-me').toggle();
+     $('#startBTN').css('display', 'none');
+     $('#quiz-container').css('display', 'block');
+     setupQuestions();
+   });
+ 
+  let questions =[
+    {
+      questionNum: 'Question One',
+      question: 'How long has Daniel been playing drums for?',
+      optionOne: '5 years',
+      optionTwo: '10 years',
+      optionThree: '15 years',
+      optionFour: '20 years',
+      answer: '20 years'
+    },
+    {
+      questionNum: 'Question Two',
+      question: 'What state does Daniel live in?',
+      optionOne: 'California',
+      optionTwo: 'Florida',
+      optionThree: 'Texas',
+      optionFour: 'Alabama',
+      answer: 'Florida'
+    },
+    {
+      questionNum: 'Question Three',
+      question: `Who is Daniel's favorite online web development teacher?`,
+      optionOne: 'Brad Traversy',
+      optionTwo: 'Mosh Hamedani',
+      optionThree: 'Jon Calhoun',
+      optionFour: 'Wes Bos',
+      answer: 'Brad Traversy'
+    }
+  ];
+  let count = 0;
+  function setupQuestions(){
+    if(count <= 2){
+    $('#question-number').text(questions[count].questionNum);
+    $('#question').text(questions[count].question);
+    $('#option-one').text(questions[count].optionOne);
+    $('#option-two').text(questions[count].optionTwo);
+    $('#option-three').text(questions[count].optionThree);
+    $('#option-four').text(questions[count].optionFour);
+    }
+    else{
+    finishGame()
+  }
+  }
+  
+  function getText (e){
+	if (e.target.className === 'quiz-option') {
+		userChoice = e.target.innerText;
+checkAnswer(userChoice);
+	}
+}
+function checkAnswer(userChoice){
+  if(userChoice === questions[count].answer){
+    alert('You got the answer right!');
+  }
+  else{
+    alert('Sorry! Try again.')
+  }
+  count++;
+  setupQuestions();
+}
+function finishGame(){
+  count=0;
+  $('#quiz-container').css('display', 'none');
+  $('#about-me').toggle();
+     $('#startBTN').css('display', 'inline-block');
+}
+    </script>
+    </div>
+</body>
+</html>
