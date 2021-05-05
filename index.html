@@ -10,13 +10,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@700&display=swap" rel="stylesheet">
 <link rel="shortcut icon" href="#" />
+<link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico">
   <style>
+:root{
+  --tealColor: #1c6c84;
+  --burgundyColor: #6f2c4d;
+}
 * {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
 }
-
 body::after {
 	content: "";
 	background: url("https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1066&q=80") no-repeat center/cover;
@@ -35,88 +39,83 @@ body {
 	margin: 0 auto;
 	padding: 1em;
 }
+header{
+  background-color: var(--tealColor);
+  margin: 1em auto;
+  width: 50%;
+  text-shadow: 4px 4px 3px rgba(111,44,77, 0.8);
+}
+header h1{
+  font-size: 3rem;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
+header h2{
+  margin-top: 0.3em;
+  font-size: 2rem;
+  font-family: 'Montserrat Alternates', sans-serif;
+}
 .text-center{
   text-align: center;
 }
 #danny-pic{
   height: 55%;
-  max-height: 400px;
   width: 25%;
-  margin: 0 auto;
+  max-height: 400px;
+  max-width: 295px;
+  margin: 0 auto 1em auto;
   display: block;
   border-radius: 50%;
-  margin-bottom: 1em;
 }
-
 #about-me{
-height: 50%;
-width: 30%;
-margin: 0 auto;
-color: white;
-background-color: #6f2c4d;
-padding: 1em;
-display: block;
+  height: 50%;
+  width: 30%;
+  margin: 0 auto;
+  color: white;
+  background-color: var(--burgundyColor);
+  padding: 1em;
+  display: block;
 }
-
 #about-me details{
   height: 100%;
   width: 100%;
   margin: 0 auto;
 }
-details img{
-height: 25%;
-width: 25%;
-margin: 0 auto;
-display: block;
+#about-me details img{
+  height: 25%;
+  width: 25%;
+  margin: 0 auto;
+  display: block;
 }
-details em{
+#about-me details em{
   margin: 1em auto;
   display: block;
   font-size: 2rem;
   text-decoration: underline;
-  }
- details summary{
+}
+#about-me details summary{
    font-size: 1.5rem;
    border: solid rgba(0,0,0,0.5);
- } 
- 
-details img:nth-of-type(3){
+} 
+#about-me details img:nth-of-type(3){
   margin-bottom: 2em;
-}
-
-.title h2{
-  margin-top: 1em;
-  background-color: #1c6c84;
-}
-#title-container{
-  background-color: #1c6c84;
-  margin: 1em auto;
-  width: 50%;
-}
-#full-container h2:first-of-type{
-  margin-top: 0.3em;
-  font-size: 2rem;
-  font-family: 'Montserrat Alternates', sans-serif;
-}
-#full-container h1:first-of-type{
-  font-size: 3rem;
-  font-family: 'Montserrat Alternates', sans-serif;
 }
 #description{
   margin: 1em auto;
   width: 50%;
   color: white;
-  background-color: #1c6c84;
+  background-color: var(--tealColor);
   padding: 0.5em;
 }
-
 #startBTN{
   padding: 1em;
   display: block;
   margin: 0.5em auto;
   cursor: pointer;
-  background-color: #1c6c84;
+  background-color:var(--tealColor);
   color: white;
+  -moz-box-shadow: 1px 1px 3px 2px var(--burgundyColor);
+  -webkit-box-shadow: 1px 1px 3px 2px var(--burgundyColor);
+  box-shadow:         1px 1px 3px 2px var(--burgundyColor);
 }
 #quiz-container{
   display: none;
@@ -129,10 +128,9 @@ details img:nth-of-type(3){
   display: block;
   padding: 0.5em;
   color: white;
-  background-color: #1c6c84;
+  background-color:var(--tealColor);
   cursor: pointer;
 }
-
 #question-number{
   text-align: center;
   border: solid black;
@@ -149,31 +147,35 @@ details img:nth-of-type(3){
   margin: 0.5em 0 0.5em 0.5em;
 }
 @media(max-width: 754px) and (min-width: 400px){
-#full-container h1:first-of-type{
+header{
+  width: 75%;
+}
+header h1{
   font-size: 2rem;
 }
-#full-container h2:first-of-type{
+header h2{
   font-size: 1.5rem;
 }
 #danny-pic{
   height: 75%;
   width: 45%;
 }
-#title-container{
+#description{
+  font-size: 1rem;
   width: 75%;
 }
-#description{
- font-size: 1rem;
- width: 75%;
-}
-details summary{
-   font-size: 1rem;
-   padding: 0.5em;
+#about-me details summary{
+  font-size: 1rem;
+  padding: 0.5em;
  } 
- details em{
+ #about-me details em{
   font-size: 1.5rem;
-  }
- #question{
+}
+#about-me details img{
+  height: 50%;
+  width: 50%;
+}
+#question{
   font-size: 1.2rem;
   margin: 0.5em;
 }
@@ -182,43 +184,47 @@ details summary{
 }
 }
 @media(max-width: 399px){
-  details summary{
+header{
+  width: 85%;
+}
+header h1{
+  font-size: 1.2rem;
+}
+header h2{
+  font-size: 1.2rem;
+}
+#about-me details summary{
    font-size: 0.9rem;
    padding: 0.7em;
- } 
- #question{
+} 
+#about-me details em{
+  font-size: 1.2rem;
+}
+#about-me details img{
+  height: 70%;
+  width: 70%;
+}
+#question{
   margin: 0.5em 0;
   font-size: 1rem;
   padding: 0.5em;
-}
-#title-container{
-  width: 85%;
-}
-#full-container h1:first-of-type{
-  font-size: 1.2rem;
-}
-#full-container h2:first-of-type{
-  font-size: 1.2rem;
 }
 #description{
  font-size: 0.8rem;
  width: 85%;
 }
-details em{
-  font-size: 1.2rem;
-  }
 }
 </style>
 </head>
 <body>
-  <div id="full-container">
-    <section id="title-container">
- <h1 class="title text-center">DANIEL WILSON</h1>
- <h2 class="title text-center">Web Developer</h2>
-</section>
- <img id="danny-pic" src="images/danny.jpg" alt="picture">
- <h3 id="description" class="text-center">Want to know more about me? Check out my hobbies and test your knowledge about me in the quiz below!</h3>
- <div id="about-me">
+<div id="full-container">
+<header>
+  <h1 class="title text-center">DANIEL WILSON</h1>
+  <h2 class="title text-center">Web Developer</h2>
+</header>
+<img id="danny-pic" src="images/danny.jpg" alt="picture">
+<h3 id="description" class="text-center">Want to know more about me? Check out my hobbies and test your knowledge about me in the quiz below!</h3>
+<div id="about-me">
   <details>
     <summary>View Daniel's Hobbies</summary>
     <em class="text-center">Programming</em>
@@ -230,39 +236,42 @@ details em{
     <em class="text-center">Running</em>
     <img src="https://images.unsplash.com/photo-1613206334619-c6bb9c203ef0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1053&q=80" alt="picture">
     <br>
-</details>
+  </details>
 </div>
 <br>
 <button id="startBTN">Start Trivia</button>
 <section id="quiz-container">
-<p id="question-number">test</p>
-<h3 id="question" class="text-center">test</h3>
-<button class="quiz-option" id="option-one"></button>
-<button class="quiz-option" id="option-two"></button>
-<button class="quiz-option" id="option-three"></button>
-<button class="quiz-option" id="option-four"></button>
-<br>
+  <p id="question-number">test</p>
+  <h3 id="question" class="text-center">test</h3>
+  <button class="quiz-option" id="option-one"></button>
+  <button class="quiz-option" id="option-two"></button>
+  <button class="quiz-option" id="option-three"></button>
+  <button class="quiz-option" id="option-four"></button>
+  <br>
 </section>
- <script>
-    let triviaContent=document.getElementById('quiz-container');
+<script>
+  let triviaContent=document.getElementById('quiz-container'),
+  userChoice,
+  userchoiceBTN;
   triviaContent.addEventListener('click', getText);
-  let userChoice;
-  let userchoiceBTN;
+
+/*If user clicks on about-me drop down, hide the start button. if about-me doesnt have class "open" then toggle class 'open' and change about-me width to 80% of container and then hide the description h2 element. if about-me does contain open class then remove class open, change about-me width to 30%, show the start button and show the description*/
    $('#about-me').click(function(){
-     $('#startBTN').hide()
      if(this.className!== 'open'){
-       $(this).toggleClass('open');
-      $(this).css('width', '100%');
+      $(this).toggleClass('open');
+      $(this).css('width', '80%');
+      $('#startBTN').hide()
       $('#description').hide();
      }
      else{
-      $(this).toggleClass('open');
+     $(this).toggleClass('open');
      $(this).css('width', '30%');
      $('#startBTN').show();
      $('#description').show();
      }
    });
  
+   /*if user clicks on start button, hide the about-me summary, hide the description & remove the start button. Display the quiz container.*/
    $('#startBTN').click(function(){
      $('#about-me').toggle();
      $('#description').hide();
@@ -315,12 +324,14 @@ details em{
   }
   }
   
+  /*if user clicks on one of the button choices, save the innerText of the user's choice*/
   function getText (e){
 	if (e.target.className === 'quiz-option') {
 		userChoice = e.target.innerText;
 checkAnswer(userChoice);
 	}
 }
+/*check if user's choice is the correct answer, alert results.*/
 function checkAnswer(userChoice){
   if(userChoice === questions[count].answer){
     alert('You got the answer right!');
@@ -331,14 +342,15 @@ function checkAnswer(userChoice){
   count++;
   setupQuestions();
 }
+/*reset counter. remove quiz container. display about-me section. show start button and show description*/
 function finishGame(){
   count=0;
   $('#quiz-container').css('display', 'none');
   $('#about-me').toggle();
-     $('#startBTN').css('display', 'block');
-     $('#description').show();
+  $('#startBTN').css('display', 'block');
+  $('#description').show();
 }
-    </script>
-    </div>
+</script>
+</div>
 </body>
 </html>
